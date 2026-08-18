@@ -1,3 +1,4 @@
+
 import axios from "axios"
 
 import type {
@@ -320,11 +321,6 @@ export const lectureApi = {
 
       return data
     } catch (error) {
-      /*
-       * A 409 means the backend rejected this
-       * lecture because it conflicts with
-       * something that already exists.
-       */
       if (
         axios.isAxiosError(
           error,
@@ -416,8 +412,6 @@ export const noteApi = {
 
   async create(payload: {
     lectureId: string
-    timestamp: number
-    timestampLabel: string
     content: string
     isImportant?: boolean
   }): Promise<Note> {
