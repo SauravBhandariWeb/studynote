@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <script>
+      (function () {
+        const theme = localStorage.getItem('theme');
+
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <!-- Primary SEO -->
+    <title>StudyNote — Lecture Notes & Study Tracker</title>
+
+    <meta
+      name="description"
+      content="StudyNote helps students create timestamped notes, track study sessions, organize subjects, revise important notes, and reach study goals."
+    />
+
+    <meta
+      name="keywords"
+      content="StudyNote, study notes, timestamped notes, study tracker, online study app, student notes, lecture notes, revision, study sessions, study goals"
+    />
+
+    <meta name="author" content="StudyNote" />
+
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+
+    <meta name="googlebot" content="index, follow" />
+
+    <meta name="theme-color" content="#070b14" />
+
+    <!-- Canonical URL -->
+    <link
+      rel="canonical"
+      href="https://studynote-gray.vercel.app/"
+    />
+
+    <!-- StudyNote favicon / brand icon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%234F46E5'/%3E%3Cpath d='M10 27 32 16l22 11-22 11L10 27Z' fill='none' stroke='white' stroke-width='4' stroke-linejoin='round'/%3E%3Cpath d='M18 32v9c8 7 20 7 28 0v-9' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M54 28v10' fill='none' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E"
+    />
+
+    <!-- Open Graph / Social Sharing -->
+    <meta
+      property="og:type"
+      content="website"
+    />
+
+    <meta
+      property="og:title"
+      content="StudyNote — Lecture Notes & Study Tracker"
+    />
+
+    <meta
+      property="og:description"
+      content="Create timestamped notes, track study sessions, revise important concepts, and reach your study goals with StudyNote."
+    />
+
+    <meta
+      property="og:url"
+      content="https://studynote-gray.vercel.app/"
+    />
+
+    <meta
+      property="og:site_name"
+      content="StudyNote"
+    />
+
+    <meta
+      property="og:locale"
+      content="en_US"
+    />
+
+    <!-- Twitter / X -->
+    <meta
+      name="twitter:card"
+      content="summary"
+    />
+
+    <meta
+      name="twitter:title"
+      content="StudyNote — Lecture Notes & Study Tracker"
+    />
+
+    <meta
+      name="twitter:description"
+      content="Turn lectures into organized timestamped notes and track your study progress with StudyNote."
+    />
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script
+      type="module"
+      src="/src/main.tsx"
+    ></script>
+  </body>
+</html>
