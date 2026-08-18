@@ -9,8 +9,6 @@ function formatNote(n: any) {
     _id: n._id.toString(),
     userId: n.userId.toString(),
     lectureId: n.lectureId.toString(),
-    timestamp: n.timestamp,
-    timestampLabel: n.timestampLabel,
     content: n.content,
     isImportant: n.isImportant,
     createdAt: n.createdAt,
@@ -24,10 +22,13 @@ router.get('/:lectureId/notes', async (req: AuthRequest, res) => {
     const notes = await Note.find({
       lectureId: req.params.lectureId,
       userId: req.userId,
-    }).sort({ timestamp: 1 });
+    }).sort({ createdAt: -1 });
+
     res.json(notes.map(formatNote));
   } catch {
-    res.status(500).json({ message: 'Failed to fetch notes' });
+    res.status(500).json({
+      message: 'Failed to fetch notes',
+    });
   }
 });
 
