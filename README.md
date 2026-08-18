@@ -1,4 +1,4 @@
-`# StudyNote — YouTube Lecture & Note-Taking Platform
+# StudyNote — YouTube Lecture & Note-Taking Platform
 
 ## App Flow
 
@@ -24,7 +24,7 @@ After logging in, users land on the **Dashboard**, which gives an at-a-glance ov
 
 ### 3. Subjects
 
-Users organize their learning into **Subjects** (e.g. "Calculus", "Organic Chemistry"). Each subject has a name, color, and icon. Subjects are used to tag lectures and filter content across the app.
+Users organize their learning into **Subjects** (e.g. "Calculus", "Organic Chemistry"). Each subject has a name, color, and icon. Subjects are used to organize lectures and notes across the app.
 
 ### 4. Lecture Library
 
@@ -40,12 +40,13 @@ The **Lecture Library** is the core content hub:
 
 Clicking a lecture opens the **Lecture Player** page — a split-screen layout:
 
-- **Left side:** The embedded YouTube video plays with the YouTube IFrame API. The app tracks the current playback time in real time.
+- **Left side:** The embedded YouTube video plays using the YouTube IFrame API.
 - **Right side:** A notes panel where users can:
-  - **Write timestamped notes** — Each note is automatically tagged with the current video timestamp. Clicking a note's timestamp jumps the video to that exact moment.
-  - **Mark notes as important** — Star important notes for quick review.
-  - **Filter notes** — Toggle to show only important notes.
-  - **Delete notes** — Remove notes with a confirmation prompt.
+  - Write notes while watching.
+  - Mark notes as important.
+  - Filter notes to show only important notes.
+  - Edit notes.
+  - Delete notes with a confirmation prompt.
 - Watch progress is saved automatically as the user watches.
 
 ### 6. Notes Page
@@ -54,7 +55,9 @@ A centralized view of **all notes** across every lecture:
 
 - Browse, search, and filter all notes in one place.
 - Filter by "important only" to review starred notes.
-- Each note shows its source lecture and timestamp for context.
+- Search notes by content, lecture, channel, or subject.
+- Notes are grouped according to their lecture's subject.
+- Notes can be edited or deleted.
 
 ### 7. Collections
 
@@ -70,6 +73,7 @@ The **Revision** page helps users review their saved notes:
 
 - Shows important notes and recent notes for quick re-reading.
 - Designed for active recall before exams.
+- Important revision notes can be exported as a clean PDF.
 
 ### 9. Study Sessions
 
@@ -77,6 +81,8 @@ Users can log **Study Sessions** to track time spent studying:
 
 - Record a session with duration, associated lecture/subject, and optional notes.
 - Sessions feed into the Dashboard's study hours and streak calculations.
+- Live study timer with pause/resume support.
+- Optional study targets with alarm feedback.
 - Past sessions can be reviewed and deleted.
 
 ### 10. Study Goals
@@ -90,34 +96,24 @@ Users can set **Study Goals** with:
 
 ### 11. Profile & Settings
 
-- **Profile** — View and edit name and avatar.
-- **Settings** — Manage account preferences.
+- **Profile** — View and edit name and account details.
+- **Settings** — Manage notifications, dark mode, and account preferences.
 
 ### Navigation Flow
 
-```
+```text
 Landing → Login / Register → Dashboard
                                     │
                     ┌───────────────┼───────────────┐
                     │               │               │
               Lecture Library   Subjects        Study Sessions
                     │
-              Lecture Player ←→ Timestamped Notes
+              Lecture Player ←→ Lecture Notes
                     │
               Notes Page (all notes)
                     │
               Revision (review important notes)
-                    
+
               Collections (organize lectures)
               Study Goals (track targets)
               Profile / Settings
-```
-
-### Tech Stack
-
-- **Frontend:** React + TypeScript + Tailwind CSS + Vite
-- **Backend:** Express + TypeScript
-- **Database:** MongoDB (via Mongoose)
-- **Auth:** JWT tokens in HTTP-only cookies
-- **Video:** YouTube IFrame API for playback and timestamp tracking
-
