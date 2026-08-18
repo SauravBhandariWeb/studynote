@@ -831,9 +831,6 @@ export default function LecturePlayerPage() {
           })
 
 
-        /* -----------------------------------------------
-           NOTE KO TURANT UI ME ADD KARO
-        ------------------------------------------------ */
 
         setNotes((prev) =>
           [...prev, newNote].sort(
@@ -847,9 +844,7 @@ export default function LecturePlayerPage() {
 
         setIsImportant(false)
 
-        toast(
-          `Note saved at ${timestampLabel}`,
-        )
+       toast("Note saved")
 
 
 
